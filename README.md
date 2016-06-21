@@ -20,7 +20,7 @@ This boilerplate runs on [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/
 1. Change to the project's root directory.
 2. Install the CLI by running: <code>npm install --global gulp-cli</code>
 3. Run Gulp with: <code>gulp</code>.
-4. For more details, visit [Grunt's website](http://gruntjs.com/getting-started).
+4. For more details, visit [Gulp's website](http://gulpjs.com/).
 
 ## File Structure
 
@@ -37,5 +37,5 @@ All JS files are part of the <code>scriptFiles</code> array in the <code>gulpfil
 
 ## Build for Production
 
-### Grunt Build
+### Gulp Build
 When you're ready to build for production simply run: <code>gulp build --production</code> and your files will be minified under the <code>public</code> directory.
