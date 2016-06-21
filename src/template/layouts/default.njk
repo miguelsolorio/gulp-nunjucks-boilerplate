@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="{{ page_description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ base_path }}css/main.css">
+  <title>{{ page_title }} | Gulp + Nunjucks</title>
+</head>
+<body>
+
+  <header>
+    {% block header %}
+      {% include "partials/header.njk" %}
+    {% endblock %}
+  </header>
+
+  <nav>
+    {% block nav %}
+      {% include "partials/nav.njk" %}
+    {% endblock %}
+  </nav>
+
+  <div class="container">
+    {% block main %}
+    {% endblock %}
+  </div>
+
+  <footer>
+    {% block footer %}
+      {% include "partials/footer.njk" %}
+    {% endblock %}
+  </footer>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "gulp-nunjucks-boilerplate",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Miguel Solorio"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.0.0"
+  }
+}

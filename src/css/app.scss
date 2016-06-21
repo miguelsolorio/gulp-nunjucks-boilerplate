@@ -1,0 +1,63 @@
+//=======================
+//  App
+//=======================
+
+body{
+  color: #666;
+  font-family: 'wf_segoe-ui', Segoe UI, sans-serif;
+}
+
+a{
+  color: #dc322f;
+}
+
+h1{
+  margin:0;
+  color: #000;
+}
+
+h2{
+  margin: 25px 0 5px 0;
+  color: #333;
+  font-weight: normal;
+}
+h3{
+  color: #333;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+}
+
+p{
+  margin: 7px 0;
+}
+
+.label{
+  padding: 1px 10px;
+  color: white;
+  background-color: #666;
+  border: 2px solid white;
+}
+
+a.button{
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  background-color: #dc322f;
+  &:hover{
+    background-color: rgba(#dc322f, .8);
+  }
+}
+
+header, footer, .container{
+  padding: 10px;
+}
+
+nav{
+  padding: 0 10px 10px 10px;
+}
+
+.section{
+  margin-top: 25px;
+}

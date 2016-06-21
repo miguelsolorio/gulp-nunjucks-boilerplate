@@ -1,0 +1,32 @@
+{% extends "layouts/default.njk" %}
+
+{% set base_path = "../" %}
+{% set page_title = "Home" %}
+{% set page_description = "This is the home page" %}
+
+{% block main %}
+
+    <h2>File Structure</h2>
+
+    <div class="section">
+      <h3>HTML</h3>
+      <p>All pages can be found under <span class="label">src > template > pages</span> which use the default layout template found under <span class="label">src > template > layouts > default.njk</span></p>
+      <p>You can also find all partials under <span class="label">src > template > partials > *.njk</span></p>
+    </div>
+
+    <div class="section">
+      <h3>SASS</h3>
+      <p>All CSS dependencies are imported at <span class="label">src > css > main.scss</span></p>
+    </div>
+
+    <div class="section">
+      <h3>JavaScript</h3>
+      <p>All JS files are part of the <span class="label">scriptFiles</span> array in the <span class="label">gulpfile.js</span></p>
+    </div>
+
+    <div class="section">
+      <h2>Build for Production</h2>
+      <h3>Gulp Build</h3>
+      <p>When you're ready to build for production simply run: <span class="label">gulp build --production</span> and your files will be minified under the <span class="label">public</span> directory.</p>
+    </div>
+{% endblock %}
