@@ -1,4 +1,4 @@
-# gulp-nunjucks-Boilerplate
+# gulp-nunjucks-boilerplate
 This boilerplate runs on [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/), which depend on [Node](http://nodejs.org/) and [npm](http://npmjs.org/). Ensure that you have Node and npm installed before you begin. Additionally, this project utilizes the following packages:
 - [browser-sync](https://github.com/BrowserSync/browser-sync)
 - [gulp-concat](https://github.com/contra/gulp-concat)
