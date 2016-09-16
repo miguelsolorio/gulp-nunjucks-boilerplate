@@ -4,14 +4,10 @@
   "description": "A front-end boilerplate that uses Gulp + Nunjucks",
   "repository": {
     "type": "git",
-    "url": "https://github.com/miguelsolorio/gulp-nunjucks-boilerplate.git"
+    "url": "https://github.com/miguelsolorio/gulp-nunjucks-boilerplate"
   },
   "author": "Miguel Solorio",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/miguelsolorio/gulp-nunjucks-boilerplate"
-  },
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "del": "^2.2.0",
