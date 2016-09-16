@@ -1,5 +1,5 @@
 <div class="nav navbar-nav">
-  {% for item in navItems %}
-    <a class="nav-item nav-link" href="{{ item.menu_item | lower | replace(" ", "") }}.html">{{ item.menu_item }}</a>
+  {% for item in global %}
+    <a class="nav-item nav-link" href="{{ item.name | lower | replace(" ", "") }}.html">{{ item.name }}</a>
   {% endfor %}
 </div>

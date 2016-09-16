@@ -5,6 +5,10 @@
   "main": "",
   "author": "Miguel Solorio",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miguelsolorio/gulp-nunjucks-boilerplate"
+  },
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "del": "^2.2.0",
@@ -16,6 +20,7 @@
     "gulp-imagemin": "^3.0.1",
     "gulp-nunjucks-render": "^2.0.0",
     "gulp-sass": "^2.3.1",
+    "gulp-sequence": "^0.4.6",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7"
   }
