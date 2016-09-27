@@ -49,7 +49,7 @@ if(gutil.env.prod || gutil.env.production) {
 }
 
 // Tasks
-gulp.task('sass', function() {
+gulp.task('styles', function() {
   gulp.src(srcAssets.styles + 'main.scss')
     .pipe(sass())
     .pipe(gulpif(isProd, sass({ outputStyle: 'compressed' })))
@@ -92,12 +92,7 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('copy', function() {
-    return gulp.src(srcAssets.images + '**/*.+(png|jpg|gif)')
-      .pipe(gulp.dest(destAssets.images))
-});
-
-gulp.task('svg', function() {
-    return gulp.src(srcAssets.images + '**/*.svg')
+    return gulp.src(srcAssets.images + '**/*.+(png|jpg|gif|svg)')
       .pipe(gulp.dest(destAssets.images))
 });
 
@@ -113,22 +108,23 @@ gulp.task('template', function() {
   .pipe(gulp.dest(destAssets.root))
 });
 
+// TODO: Find a better way to do this
 gulp.task('setProd', function() {
   console.log('############ =========> Building files for Production');
   isProd = true;
 });
 
 // Watch
-gulp.task('watch', ['browserSync', 'sass', 'template', 'copy'], function() {
-  gulp.watch(srcAssets.images + '**/*.+(png|jpg|gif|svg)', ['copy', 'svg']);
-  gulp.watch(srcAssets.styles + '**/*.+(scss|sass|css)', ['sass']);
+gulp.task('watch', ['browserSync', 'styles', 'template', 'copy'], function() {
+  gulp.watch(srcAssets.images + '**/*.+(png|jpg|gif|svg)', ['copy']);
+  gulp.watch(srcAssets.styles + '**/*.+(scss|sass|css)', ['styles']);
   gulp.watch(srcAssets.scripts + '**/*.js', ['scripts',browserSync.reload]);
   gulp.watch(srcAssets.root + '**/*.+(html|nunjucks|njk)', ['template', browserSync.reload]);
-  gulp.watch('data.json', ['template', browserSync.reload]);
+  gulp.watch('navigation.json', ['template', browserSync.reload]);
 });
 
 // Default
-gulp.task('default', ['clean','clear cache','template','sass','images','svg','scripts', 'watch'], function() {
+gulp.task('default', ['clean','clear cache','template','styles','images','scripts','watch'], function() {
   console.log('############ =========> Development');
 });
 
@@ -136,4 +132,4 @@ gulp.task('default', ['clean','clear cache','template','sass','images','svg','sc
 gulp.task('build', ['default']);
 
 // Production
-gulp.task('production', gulpSequence(['setProd'], 'clean','clear cache', 'template','sass','images','scripts'));
+gulp.task('production', gulpSequence(['setProd'], 'clean','clear cache', 'template','styles','images','scripts'));
