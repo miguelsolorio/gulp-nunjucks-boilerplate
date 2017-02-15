@@ -8,11 +8,3 @@ before_script:
   - npm install -g bower
   - bower install
 script: gulp production
-
-# deploy
-language: generic
-script: bash ./deploy.sh
-env:
-  global:
-  - ENCRYPTION_LABEL: "c62565cacfe7"
-  - COMMIT_AUTHOR_EMAIL: "miguel.solorio07@gmail.com"
