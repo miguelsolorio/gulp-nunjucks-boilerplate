@@ -24,14 +24,17 @@ var srcAssets = {
   styles  : basePath.src + 'css/',
   scripts : basePath.src + 'js/',
   images  : basePath.src + 'images/',
+  fonts   : basePath.src + 'fonts/',
   root    : basePath.src,
   bower   : 'bower_components/',
+  node    : 'node_modules/'
 };
 
 var destAssets = {
   styles  : basePath.dest + 'css/',
   scripts : basePath.dest + 'js/',
   images  : basePath.dest + 'images/',
+  fonts  : basePath.dest + 'fonts/',
   root  : basePath.dest
 };
 
@@ -68,7 +71,7 @@ gulp.task("scripts", function () {
 });
 
 gulp.task('images', function() {
-    return gulp.src(srcAssets.images + '**/*.+(png|jpg|gif|svg)')
+    return gulp.src(srcAssets.images + '**/*.+(png|jpg|gif)')
       .pipe(gulpif(isProd, cache(imagemin({
         interlaced: true
       }))))
@@ -91,8 +94,13 @@ gulp.task('browserSync', function() {
     })
 });
 
-gulp.task('copy', function() {
+gulp.task('copyWatch', function() {
     return gulp.src(srcAssets.images + '**/*.+(png|jpg|gif|svg)')
+      .pipe(gulp.dest(destAssets.images))
+});
+
+gulp.task('copy', function() {
+    return gulp.src(srcAssets.images + '**/*.+(woff|woff2|ttf|svg)')
       .pipe(gulp.dest(destAssets.images))
 });
 
@@ -115,8 +123,8 @@ gulp.task('setProd', function() {
 });
 
 // Watch
-gulp.task('watch', ['browserSync', 'styles', 'template', 'copy'], function() {
-  gulp.watch(srcAssets.images + '**/*.+(png|jpg|gif|svg)', ['copy']);
+gulp.task('watch', ['browserSync', 'styles', 'template', 'copyWatch'], function() {
+  gulp.watch(srcAssets.images + '**/*.+(png|jpg|gif|svg)', ['copyWatch']);
   gulp.watch(srcAssets.styles + '**/*.+(scss|sass|css)', ['styles']);
   gulp.watch(srcAssets.scripts + '**/*.js', ['scripts',browserSync.reload]);
   gulp.watch(srcAssets.root + '**/*.+(html|nunjucks|njk)', ['template', browserSync.reload]);
@@ -124,7 +132,7 @@ gulp.task('watch', ['browserSync', 'styles', 'template', 'copy'], function() {
 });
 
 // Default
-gulp.task('default', ['clean','clear cache','template','styles','images','scripts','watch'], function() {
+gulp.task('default', ['clean','clear cache','template','styles','images','scripts','copyWatch','watch'], function() {
   console.log('############ =========> Development');
 });
 
@@ -132,4 +140,4 @@ gulp.task('default', ['clean','clear cache','template','styles','images','script
 gulp.task('build', ['default']);
 
 // Production
-gulp.task('production', gulpSequence(['setProd'], 'clean','clear cache', 'template','styles','images','scripts'));
+gulp.task('production', gulpSequence(['setProd'], 'clean','clear cache', 'template','styles','images','scripts','copy'));
