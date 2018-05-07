@@ -9,7 +9,7 @@
   "author": "Miguel Solorio",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.13.0",
+    "browser-sync": "^2.24.4",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
@@ -17,7 +17,7 @@
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-nunjucks-render": "^2.0.0",
-    "gulp-sass": "^4.0.0",
+    "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.0",
     "jquery": "^3.3.1"
   }
