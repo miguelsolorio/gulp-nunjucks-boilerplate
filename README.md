@@ -1,4 +1,7 @@
 # Gulp Nunjucks Boilerplate
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/misolori/gulp-nunjucks-boilerplate.svg)](https://greenkeeper.io/)
+
 This boilerplate runs on [Gulp](http://gulpjs.com/) and [Nunjucks](https://mozilla.github.io/nunjucks/).
 
 ## Install dependencies
